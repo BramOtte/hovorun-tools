@@ -307,9 +307,11 @@ void decrypt_file(const std::filesystem::path& rootpath, const std::filesystem::
         return;
     }
 
-    // if (str.cont)
+    auto rel = std::filesystem::relative(path, rootpath);
 
-    auto output_path = ("./decrypt" / path.filename()).generic_string();
+    auto output_pth = "./decrypt" / rel;
+    std::filesystem::create_directories(output_pth.parent_path());
+    auto output_path = (output_pth).generic_string();
     std::cout << str << " -> " << output_path << '\n';
 
     size_t encrypted_size = 0;
