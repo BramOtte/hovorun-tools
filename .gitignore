@@ -1,0 +1,5 @@
+/target
+/files
+/decrypt
+*.png
+.vscode

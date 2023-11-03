@@ -1,0 +1,1 @@
+g++ ./src/main.cpp -o ./target/main --std=c++17 && ./target/main files decrypt
